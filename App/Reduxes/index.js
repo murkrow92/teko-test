@@ -5,9 +5,11 @@ import rootSaga from 'Sagas';
 import ReduxPersist from 'Config/ReduxPersist';
 
 import { reducer as ProductReducer } from './Reducers/ProductReducer';
+import { reducer as NetworkReducer } from './Reducers/NetworkReducer';
 
 export const reducers = combineReducers({
-  product: ProductReducer
+  product: ProductReducer,
+  network: NetworkReducer
 });
 
 export default () => {
@@ -15,9 +17,6 @@ export default () => {
   const finalReducers = ReduxPersist.active
     ? persistReducer(persistConfig, reducers)
     : reducers;
-  const { store, sagasManager, sagaMiddleware } = createStoreAndMiddleware(
-    finalReducers,
-    rootSaga
-  );
+  const { store } = createStoreAndMiddleware(finalReducers, rootSaga);
   return store;
 };
