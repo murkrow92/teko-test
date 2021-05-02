@@ -7,14 +7,14 @@ import OpacityButton from 'Components/Button/OpacityButton';
 import images from 'Themes/Images';
 import styles from './ProductItemStyles';
 import CurrentPrice from 'Components/Product/CurrentPrice';
+import OriginalPrice from 'Components/Product/OrginalPrice';
 
 function DiscountBlock({ productItem }) {
   const { discountPercent } = productItem;
   return discountPercent > 0 ? (
     <View style={styles.originalPriceContainer}>
-      <Text style={styles.productItemOriginalPrice}>
-        {productItem.originalPrice}
-      </Text>
+      <OriginalPrice productItem={productItem} />
+
       <View style={styles.discountTagContainer}>
         <View style={styles.triangle} />
         <View style={styles.discountTag}>
