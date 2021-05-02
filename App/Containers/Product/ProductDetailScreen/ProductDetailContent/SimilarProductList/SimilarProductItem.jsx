@@ -4,25 +4,13 @@ import { useNavigation } from '@react-navigation/native';
 import { toDisplayObject } from 'Transforms/Product';
 import Image from 'Components/FastImage/Image';
 import OpacityButton from 'Components/Button/OpacityButton';
-import images from 'Themes/Images';
-import styles from './ProductItemStyles';
+import DiscountTag from 'Components/Product/DiscountTag';
 import CurrentPrice from 'Components/Product/CurrentPrice';
 import OriginalPrice from 'Components/Product/OriginalPrice';
-import DiscountTag from 'Components/Product/DiscountTag';
+import images from 'Themes/Images';
+import styles from './SimilarProductItemStyles';
 
-function DiscountBlock({ productItem }) {
-  const { discountPercent } = productItem;
-  return discountPercent > 0 ? (
-    <View style={styles.originalPriceContainer}>
-      <OriginalPrice productItem={productItem} />
-      <DiscountTag productItem={productItem} />
-    </View>
-  ) : (
-    <View />
-  );
-}
-
-function ProductItem(props) {
+function SimilarProductItem(props) {
   const { item } = props;
   const productItem = toDisplayObject(item);
 
@@ -38,7 +26,7 @@ function ProductItem(props) {
     <OpacityButton
       onPress={gotoProductDetail}
       isDelayPressIn={true}
-      style={styles.productItemContainer}>
+      style={styles.similarProductItemContainer}>
       <Image
         fallback={true}
         defaultSource={images.noImage}
@@ -46,17 +34,24 @@ function ProductItem(props) {
         source={productItem.imageSource}
         style={styles.productImage}
       />
-      <View style={styles.productItemContentContainer}>
-        <Text numberOfLines={2} style={styles.productItemTitle}>
+      <View style={styles.similarProductItemContentContainer}>
+        <Text numberOfLines={2} style={styles.similarProductItemTitle}>
           {productItem.title}
         </Text>
-        <View style={styles.finalPriceContainer}>
+        <View style={styles.similarProductFinalPriceContainer}>
           <CurrentPrice productItem={productItem} />
         </View>
-        <DiscountBlock productItem={productItem} />
+        {productItem.discountPercent > 0 ? (
+          <View style={styles.similarProductDiscountContainer}>
+            <OriginalPrice productItem={productItem} />
+            <DiscountTag productItem={productItem} />
+          </View>
+        ) : (
+          <View />
+        )}
       </View>
     </OpacityButton>
   );
 }
 
-export default ProductItem;
+export default SimilarProductItem;

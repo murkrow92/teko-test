@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import CurrentPrice from 'Components/Product/CurrentPrice';
-import OriginalPrice from 'Components/Product/OrginalPrice';
+import OriginalPrice from 'Components/Product/OriginalPrice';
 import DiscountTag from 'Components/Product/DiscountTag';
 import styles from './ProductTitleStyles';
 

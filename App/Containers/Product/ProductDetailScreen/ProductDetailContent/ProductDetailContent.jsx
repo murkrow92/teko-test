@@ -18,6 +18,7 @@ function ProductDetailContent(props) {
       <ProductTitle productItem={productItem} />
       <View style={styles.sectionSpace} />
       <SimilarProductList />
+      <View style={styles.sectionSpace} />
     </ScrollView>
   );
 }
