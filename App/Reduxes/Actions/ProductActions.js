@@ -4,7 +4,7 @@ const { Types, Creators } = createActions({
   fetchProductList: [],
   fetchProductListSuccess: ['productList'],
   fetchProductListFailure: [],
-  filterProduct: ['query']
+  filterProductList: ['query']
 });
 
 export const ProductTypes = Types;

@@ -21,9 +21,7 @@ function ProductList(props) {
   const extract = (item, index) => index.toString();
 
   const products = useSelector(state => state.product.productList);
-  console.log('PRODUCT LIST:', products.length);
   const isLoading = useSelector(state => state.product.isLoading);
-  console.log('IS LOADING:', isLoading);
   const refreshing = products.length === 0 && isLoading;
   return (
     <FlatList

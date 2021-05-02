@@ -1,10 +1,13 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { ProductTypes } from 'Reduxes/Actions/ProductActions';
+import products from 'Fixtures/products.json';
 
 export const INITIAL_STATE = Immutable({
   isLoading: false,
-  productList: []
+  productList: products,
+  query: '',
+  filterProductList: products
 });
 
 export const fetchProductList = (state, action) => {
@@ -27,8 +30,17 @@ export const fetchProductListFailure = (state, action) => {
   });
 };
 
+export const filterProductList = (state, action) => {
+  const { query } = action;
+  return state.merge({
+    query: query,
+    filterProductList: products
+  });
+};
+
 export const reducer = createReducer(INITIAL_STATE, {
   [ProductTypes.FETCH_PRODUCT_LIST_SUCCESS]: fetchProductListSuccess,
   [ProductTypes.FETCH_PRODUCT_LIST]: fetchProductList,
-  [ProductTypes.FETCH_PRODUCT_LIST_FAILURE]: fetchProductListFailure
+  [ProductTypes.FETCH_PRODUCT_LIST_FAILURE]: fetchProductListFailure,
+  [ProductTypes.FILTER_PRODUCT_LIST]: filterProductList
 });

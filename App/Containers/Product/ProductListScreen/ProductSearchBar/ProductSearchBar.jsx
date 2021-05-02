@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
 
+import WithSearchProduct from 'Business/Product/WithSearchProduct';
 import Image from 'Components/FastImage/Image';
 import BackArrowButton from 'Components/Button/BackArrowButton';
 import images from 'Themes/Images';
@@ -12,6 +13,8 @@ import ClearButton from './ClearButton';
 
 function ProductSearchBar(props) {
   const { onChangeText } = props;
+
+  console.log('ON CHANGE TEXT:', onChangeText);
 
   return (
     <View style={styles.productSearchBarContainer}>
@@ -48,4 +51,4 @@ ProductSearchBar.propTypes = {
   onBackPress: PropTypes.func
 };
 
-export default ProductSearchBar;
+export default WithSearchProduct(ProductSearchBar);
