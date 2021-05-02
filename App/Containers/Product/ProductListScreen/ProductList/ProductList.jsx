@@ -27,7 +27,7 @@ function ProductList(props) {
       alwaysBounceHorizontal={false}
       alwaysBounceVertical={false}
       bounces={false}
-      contentContainer={styles.productListContainer}
+      contentContainerStyle={styles.productListContainer}
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
       keyboardShouldPersistTaps="always"

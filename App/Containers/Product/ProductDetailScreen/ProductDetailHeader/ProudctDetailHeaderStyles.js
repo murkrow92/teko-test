@@ -1,11 +1,20 @@
 import { StyleSheet } from 'react-native';
 import { FONT_SF_PRO_TEXT_REGULAR } from 'Themes/Fonts';
-import { DARK_GREY, TOMATO } from 'Themes/Colors';
+import { DARK_GREY, PALE_GREY, TOMATO, WHITE } from 'Themes/Colors';
 
 export default StyleSheet.create({
   productDetailHeaderContainer: {
+    shadowColor: PALE_GREY,
+    borderBottomWidth: 0.5,
+    borderBottomColor: PALE_GREY,
+    shadowOffset: {
+      width: 0,
+      height: -1
+    },
+    shadowRadius: 0,
+    shadowOpacity: 1,
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: WHITE,
     flexDirection: 'row',
     padding: 12,
     alignItems: 'center',
