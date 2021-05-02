@@ -6,9 +6,6 @@ import ProductDetailContent from './ProductDetailContent/ProductDetailContent';
 function ProductDetailScreen(props) {
   const { route } = props;
   const { productItem } = route.params;
-
-  console.log('PRODUCT ITEM:', productItem);
-
   return (
     <>
       <ProductDetailHeader productItem={productItem} />

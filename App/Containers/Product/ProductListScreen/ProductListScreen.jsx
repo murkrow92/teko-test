@@ -1,4 +1,5 @@
 import React from 'react';
+import WithFetchProduct from 'Business/Product/WithFetchProduct';
 import ProductSearchBar from './ProductSearchBar/ProductSearchBar';
 import ProductList from './ProductList/ProductList';
 
@@ -11,4 +12,4 @@ function ProductListScreen() {
   );
 }
 
-export default ProductListScreen;
+export default WithFetchProduct(ProductListScreen);

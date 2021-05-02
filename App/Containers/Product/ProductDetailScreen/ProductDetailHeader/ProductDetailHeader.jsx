@@ -7,9 +7,6 @@ import styles from './ProudctDetailHeaderStyles';
 
 function ProductDetailHeader(props) {
   const { productItem } = props;
-
-  console.log('PRODUCT ITEM:', productItem);
-
   return (
     <View style={styles.productDetailHeaderContainer}>
       <BackArrowButton isBlack={true} />

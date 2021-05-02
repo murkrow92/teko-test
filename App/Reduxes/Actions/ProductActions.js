@@ -2,7 +2,7 @@ import { createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions({
   fetchProductList: [],
-  fetchProductListSuccess: [],
+  fetchProductListSuccess: ['productList'],
   fetchProductListFailure: [],
   filterProduct: ['query']
 });
