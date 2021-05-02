@@ -47,7 +47,9 @@ function ProductItem(props) {
   const navigation = useNavigation();
 
   function gotoProductDetail() {
-    navigation.navigate('ProductDetailScreen');
+    navigation.navigate('ProductDetailScreen', {
+      productItem: productItem
+    });
   }
 
   return (

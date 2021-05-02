@@ -9,7 +9,6 @@ function WithStatusbarChange(OriginalComponent) {
     function onStateChange(state) {
       const { index, routeNames } = state;
       const currentScreenName = routeNames[index] ? routeNames[index] : '';
-      console.log('STATE CHANGE:', state);
       dispatch(ThemeActions.setCurrentScreenName(currentScreenName));
     }
 

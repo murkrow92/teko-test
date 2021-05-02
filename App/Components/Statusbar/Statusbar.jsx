@@ -16,8 +16,6 @@ function Statusbar(props) {
     ? statusbarStyle[currentScreenName]
     : statusbarStyle.ProductListScreen;
 
-  console.log('CURRENT SCREEN NAME:', currentScreenName);
-
   return (
     <View style={[styles.statusbarContainer, additionalStyle]}>
       <StatusBar translucent={false} barStyle="light-content" />
