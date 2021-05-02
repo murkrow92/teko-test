@@ -1,5 +1,5 @@
+import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { useEffect } from 'react';
 import NetInfo from '@react-native-community/netinfo';
 import NetworkActions from 'Reduxes/Actions/NetworkActions';
 
@@ -7,18 +7,18 @@ function WithNetworkListener(OriginalComponent) {
   function WrappedComponent(props) {
     const dispatch = useDispatch();
 
-    useEffect(networkListener, []);
+    const networkListener = useCallback(() => {
+      function onConnectionChange(connectionInfo) {
+        dispatch(NetworkActions.changeConnectionState(connectionInfo));
+      }
 
-    function networkListener() {
       const unsubscribe = NetInfo.addEventListener(onConnectionChange);
       return () => {
         unsubscribe();
       };
-    }
+    }, [dispatch]);
 
-    function onConnectionChange(connectionInfo) {
-      dispatch(NetworkActions.changeConnectionState(connectionInfo));
-    }
+    useEffect(networkListener, [networkListener]);
 
     return <OriginalComponent {...props} />;
   }
