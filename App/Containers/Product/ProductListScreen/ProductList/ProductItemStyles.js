@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { WIDTH_RATIO } from 'Config/Dimens';
 import { FONT_SF_PRO_TEXT_REGULAR } from 'Themes/Fonts';
-import { DARK_GREY, TOMATO, WHITE } from 'Themes/Colors';
+import { COOL_GREY, DARK_GREY, TOMATO, WHITE } from 'Themes/Colors';
 
 export default StyleSheet.create({
   productItemContainer: {
@@ -50,5 +50,18 @@ export default StyleSheet.create({
     lineHeight: 20,
     letterSpacing: -0.4,
     color: TOMATO
+  },
+  originalPriceContainer: {
+    marginTop: 2,
+    flexDirection: 'row'
+  },
+  productItemOriginalPrice: {
+    fontFamily: FONT_SF_PRO_TEXT_REGULAR,
+    fontSize: 12,
+    fontWeight: 'normal',
+    fontStyle: 'normal',
+    lineHeight: 16,
+    letterSpacing: -0.1,
+    color: COOL_GREY
   }
 });

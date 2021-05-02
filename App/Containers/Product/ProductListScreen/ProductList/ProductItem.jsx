@@ -25,6 +25,11 @@ function ProductItem(props) {
           </Text>
           <Text style={styles.priceSymbol}> đ</Text>
         </View>
+        <View style={styles.originalPriceContainer}>
+          <Text style={styles.productItemOriginalPrice}>
+            {productItem.originalPrice}
+          </Text>
+        </View>
       </View>
     </OpacityButton>
   );
