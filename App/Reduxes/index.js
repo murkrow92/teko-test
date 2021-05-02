@@ -6,10 +6,12 @@ import ReduxPersist from 'Config/ReduxPersist';
 
 import { reducer as ProductReducer } from './Reducers/ProductReducer';
 import { reducer as NetworkReducer } from './Reducers/NetworkReducer';
+import { reducer as ThemeReducer } from './Reducers/ThemeReducer';
 
 export const reducers = combineReducers({
   product: ProductReducer,
-  network: NetworkReducer
+  network: NetworkReducer,
+  theme: ThemeReducer
 });
 
 export default () => {
