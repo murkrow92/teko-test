@@ -63,7 +63,9 @@ export default StyleSheet.create({
     lineHeight: 16,
     letterSpacing: -0.1,
     color: COOL_GREY,
-    backgroundColor: 'transparent'
+    backgroundColor: 'transparent',
+    textDecorationLine: 'line-through',
+    textDecorationStyle: 'solid'
   },
   productItemDiscountText: {
     fontFamily: FONT_SF_PRO_TEXT_REGULAR,

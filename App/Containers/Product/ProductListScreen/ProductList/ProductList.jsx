@@ -22,12 +22,13 @@ function ProductList(props) {
 
   return (
     <FlatList
+      maxToRenderPerBatch={20}
       removeClippedSubviews={true}
       initialNumToRender={20}
       alwaysBounceHorizontal={false}
       alwaysBounceVertical={false}
       bounces={false}
-      contentContainerStyle={styles.productListContainer}
+      style={styles.productListContainer}
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
       keyboardShouldPersistTaps="always"
