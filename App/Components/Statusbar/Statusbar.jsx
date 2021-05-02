@@ -6,14 +6,15 @@ import styles from './StatusbarStyles';
 
 function Statusbar(props) {
   useEffect(() => {
-    if (Platform.OS === 'android') StatusBar.setTranslucent(true);
+    if (Platform.OS === 'android') {
+      StatusBar.setTranslucent(true);
+    }
   }, []);
 
   const statusbarStyle = useSelector(state => state.theme.statusbarStyle);
-
   return (
     <View style={[styles.statusbarContainer, statusbarStyle]}>
-      <StatusBar barStyle="light-content" />
+      <StatusBar translucent={false} barStyle="light-content" />
     </View>
   );
 }
