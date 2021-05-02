@@ -25,7 +25,7 @@ function ProductSearchBar(props) {
           underlineColorAndroid="transparent"
           autoFocus
           keyboardType="default"
-          style={styles.input}
+          style={styles.searchInput}
           onChangeText={onChangeText}
         />
       </View>
