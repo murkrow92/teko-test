@@ -8,21 +8,14 @@ import images from 'Themes/Images';
 import styles from './ProductItemStyles';
 import CurrentPrice from 'Components/Product/CurrentPrice';
 import OriginalPrice from 'Components/Product/OrginalPrice';
+import DiscountTag from 'Components/Product/DiscountTag';
 
 function DiscountBlock({ productItem }) {
   const { discountPercent } = productItem;
   return discountPercent > 0 ? (
     <View style={styles.originalPriceContainer}>
       <OriginalPrice productItem={productItem} />
-
-      <View style={styles.discountTagContainer}>
-        <View style={styles.triangle} />
-        <View style={styles.discountTag}>
-          <Text style={styles.productItemDiscountText}>
-            -{productItem.discountPercent}%
-          </Text>
-        </View>
-      </View>
+      <DiscountTag productItem={productItem} />
     </View>
   ) : (
     <View />
