@@ -2,10 +2,6 @@ import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { ThemeTypes } from 'Reduxes/Actions/ThemeActions';
 
-export const INITIAL_STATE = Immutable({
-  statusbarStyle: {}
-});
-
 const selectorStatusbarStyle = {
   red: {
     backgroundColor: 'red'
@@ -15,15 +11,21 @@ const selectorStatusbarStyle = {
   }
 };
 
-function setStatusbarStyle(state, action) {
-  const { styleName } = action;
+export const INITIAL_STATE = Immutable({
+  statusbarStyle: {
+    ProductListScreen: selectorStatusbarStyle.red,
+    ProductDetailScreen: selectorStatusbarStyle.white
+  },
+  currentScreenName: ''
+});
+
+function setCurrentScreenName(state, action) {
+  const { screenName } = action;
   return state.merge({
-    statusbarStyle: selectorStatusbarStyle[styleName]
-      ? selectorStatusbarStyle[styleName]
-      : selectorStatusbarStyle.white
+    currentScreenName: screenName
   });
 }
 
 export const reducer = createReducer(INITIAL_STATE, {
-  [ThemeTypes.SET_STATUSBAR_STYLE]: setStatusbarStyle
+  [ThemeTypes.SET_CURRENT_SCREEN_NAME]: setCurrentScreenName
 });

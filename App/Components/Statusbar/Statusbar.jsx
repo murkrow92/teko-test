@@ -10,10 +10,16 @@ function Statusbar(props) {
       StatusBar.setTranslucent(true);
     }
   }, []);
-
+  const currentScreenName = useSelector(state => state.theme.currentScreenName);
   const statusbarStyle = useSelector(state => state.theme.statusbarStyle);
+  const additionalStyle = statusbarStyle[currentScreenName]
+    ? statusbarStyle[currentScreenName]
+    : statusbarStyle.ProductListScreen;
+
+  console.log('CURRENT SCREEN NAME:', currentScreenName);
+
   return (
-    <View style={[styles.statusbarContainer, statusbarStyle]}>
+    <View style={[styles.statusbarContainer, additionalStyle]}>
       <StatusBar translucent={false} barStyle="light-content" />
     </View>
   );
