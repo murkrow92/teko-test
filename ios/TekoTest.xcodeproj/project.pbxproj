@@ -14,6 +14,10 @@
 		1B95E004C623BD6401124416 /* libPods-TekoTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED5C20E6B55469194338001E /* libPods-TekoTest.a */; };
 		7535649625359BA8A0F3632D /* libPods-TekoTest-TekoTestTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1630B9F99EB98F2183E008F1 /* libPods-TekoTest-TekoTestTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		D78C66B59284413F98542BE6 /* FontsFree-Net-SFProText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 702EA0E1128A4688A911F7BC /* FontsFree-Net-SFProText-Bold.ttf */; };
+		FAD1429D2C10420DB7C88954 /* FontsFree-Net-SFProText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6B6D031144B4606B038897B /* FontsFree-Net-SFProText-Regular.ttf */; };
+		CD62EB29BF584C8DA75189C2 /* antfill.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6117B9A61403430A89E5A901 /* antfill.ttf */; };
+		A27F28C047A84CA9A24F27D3 /* antoutline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0AA3540209647488BBC71F2 /* antoutline.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED5C20E6B55469194338001E /* libPods-TekoTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TekoTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD305ED6F2B018F89794B339 /* Pods-TekoTest-TekoTestTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TekoTest-TekoTestTests.debug.xcconfig"; path = "Target Support Files/Pods-TekoTest-TekoTestTests/Pods-TekoTest-TekoTestTests.debug.xcconfig"; sourceTree = "<group>"; };
+		702EA0E1128A4688A911F7BC /* FontsFree-Net-SFProText-Bold.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SFProText-Bold.ttf"; path = "../App/Assets/Fonts/FontsFree-Net-SFProText-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6B6D031144B4606B038897B /* FontsFree-Net-SFProText-Regular.ttf */ = {isa = PBXFileReference; name = "FontsFree-Net-SFProText-Regular.ttf"; path = "../App/Assets/Fonts/FontsFree-Net-SFProText-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6117B9A61403430A89E5A901 /* antfill.ttf */ = {isa = PBXFileReference; name = "antfill.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antfill.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0AA3540209647488BBC71F2 /* antoutline.ttf */ = {isa = PBXFileReference; name = "antoutline.ttf"; path = "../node_modules/@ant-design/icons-react-native/fonts/antoutline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +130,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				E4E71EBE8548CC09EE4301A1 /* Pods */,
+				DDFA711CC11F4177880D0828 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -147,6 +156,18 @@
 			);
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		DDFA711CC11F4177880D0828 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				702EA0E1128A4688A911F7BC /* FontsFree-Net-SFProText-Bold.ttf */,
+				A6B6D031144B4606B038897B /* FontsFree-Net-SFProText-Regular.ttf */,
+				6117B9A61403430A89E5A901 /* antfill.ttf */,
+				A0AA3540209647488BBC71F2 /* antoutline.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -244,6 +265,10 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				D78C66B59284413F98542BE6 /* FontsFree-Net-SFProText-Bold.ttf in Resources */,
+				FAD1429D2C10420DB7C88954 /* FontsFree-Net-SFProText-Regular.ttf in Resources */,
+				CD62EB29BF584C8DA75189C2 /* antfill.ttf in Resources */,
+				A27F28C047A84CA9A24F27D3 /* antoutline.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
