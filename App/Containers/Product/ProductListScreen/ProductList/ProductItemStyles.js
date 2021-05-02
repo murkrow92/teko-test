@@ -29,27 +29,7 @@ export default StyleSheet.create({
     color: DARK_GREY
   },
   finalPriceContainer: {
-    marginTop: 4,
-    flexDirection: 'row'
-  },
-  productItemFinalPrice: {
-    fontFamily: FONT_SF_PRO_TEXT_REGULAR,
-    fontSize: 15,
-    fontWeight: '600',
-    fontStyle: 'normal',
-    lineHeight: 20,
-    letterSpacing: -0.4,
-    color: TOMATO
-  },
-  priceSymbol: {
-    marginTop: -2,
-    fontFamily: FONT_SF_PRO_TEXT_REGULAR,
-    fontSize: 15,
-    fontWeight: '600',
-    fontStyle: 'normal',
-    lineHeight: 20,
-    letterSpacing: -0.4,
-    color: TOMATO
+    marginTop: 4
   },
   originalPriceContainer: {
     marginTop: 2,

@@ -18,7 +18,7 @@ function ProductTitle(props) {
         </View>
       </View>
       <View style={styles.badgeWrapper}>
-        <Text style={styles.productItemOriginalPrice}>
+        <Text style={styles.productFinalPrice}>
           {productItem.originalPrice}
         </Text>
       </View>
