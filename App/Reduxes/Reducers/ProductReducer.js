@@ -3,6 +3,7 @@ import Immutable from 'seamless-immutable';
 import { ProductTypes } from 'Reduxes/Actions/ProductActions';
 import products from 'Fixtures/products.json';
 import score from 'string-score';
+import lodash from 'lodash';
 
 export const INITIAL_STATE = Immutable({
   isLoading: false,
@@ -33,14 +34,26 @@ export const fetchProductListFailure = (state, action) => {
 
 export const filterProductList = (state, action) => {
   const { query } = action;
-  const filterResult =
-    query.length > 0
-      ? state.productList.filter(function (product) {
-          return score(product.name, query) > 0.4;
-        })
-      : state.productList;
 
-  console.log('RESULT:', filterResult.length);
+  function filter() {
+    const filteredArray = state.productList.filter(function (product) {
+      return score(product.name, query) > 0.4;
+    });
+    const mutableArray = [];
+    lodash.forEach(filteredArray, function (element) {
+      mutableArray.push({
+        ...element
+      });
+    });
+
+    mutableArray.sort(function (current, next) {
+      return score(next.name, query) - score(current.name, query);
+    });
+
+    return mutableArray;
+  }
+
+  const filterResult = query.length > 0 ? filter() : state.productList;
 
   return state.merge({
     query: query,
