@@ -29,6 +29,7 @@ function ProductSearchBar(props) {
           style={styles.searchInput}
           onChangeText={onChangeText}
         />
+        <Image source={images.iconClose} style={styles.iconArrowSearch} />
       </View>
     </View>
   );

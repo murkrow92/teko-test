@@ -39,11 +39,12 @@ export default StyleSheet.create({
     justifyContent: 'center'
   },
   iconArrowSearch: {
-    width: 24,
-    height: 24
+    width: 16,
+    height: 16
   },
   searchInput: {
     marginLeft: 8,
+    marginRight: 8,
     paddingLeft: 0,
     flex: 1,
     fontFamily: FONT_SF_PRO_TEXT_REGULAR,
