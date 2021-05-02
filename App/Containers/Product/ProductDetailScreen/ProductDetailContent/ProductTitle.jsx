@@ -3,6 +3,7 @@ import { View, Text } from 'react-native';
 import styles from './ProductTitleStyles';
 
 function ProductTitle(props) {
+  const { productItem } = props;
   return (
     <View style={styles.productTitleContainer}>
       <Text numberOfLines={1} style={styles.productTitleText}>
@@ -17,6 +18,9 @@ function ProductTitle(props) {
         </View>
       </View>
       <View style={styles.badgeWrapper}>
+        <Text style={styles.productItemOriginalPrice}>
+          {productItem.originalPrice}
+        </Text>
       </View>
     </View>
   );

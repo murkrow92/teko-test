@@ -12,13 +12,20 @@ function Statusbar(props) {
   }, []);
   const currentScreenName = useSelector(state => state.theme.currentScreenName);
   const statusbarStyle = useSelector(state => state.theme.statusbarStyle);
+  const statusbarContentStyle = useSelector(
+    state => state.theme.statusbarContentStyle
+  );
   const additionalStyle = statusbarStyle[currentScreenName]
     ? statusbarStyle[currentScreenName]
     : statusbarStyle.ProductListScreen;
 
+  const barStyle = statusbarContentStyle[currentScreenName]
+    ? statusbarContentStyle[currentScreenName]
+    : statusbarContentStyle.ProductListScreen;
+
   return (
     <View style={[styles.statusbarContainer, additionalStyle]}>
-      <StatusBar translucent={false} barStyle="light-content" />
+      <StatusBar translucent={false} barStyle={barStyle} />
     </View>
   );
 }

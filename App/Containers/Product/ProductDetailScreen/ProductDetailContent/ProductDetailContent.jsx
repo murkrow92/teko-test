@@ -1,10 +1,11 @@
 import React from 'react';
-import { FlatList, ScrollView } from 'react-native';
+import { ScrollView } from 'react-native';
 import ProductTitle from './ProductTitle';
 
 import styles from './ProductDetailContentStyles';
 
 function ProductDetailContent(props) {
+  const { productItem } = props;
   return (
     <ScrollView
       alwaysBounceHorizontal={false}
@@ -13,7 +14,7 @@ function ProductDetailContent(props) {
       showsVerticalScrollIndicator={false}
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.productDetailContentContainer}>
-      <ProductTitle />
+      <ProductTitle productItem={productItem} />
     </ScrollView>
   );
 }

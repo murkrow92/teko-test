@@ -17,6 +17,10 @@ export const INITIAL_STATE = Immutable({
     ProductListScreen: selectorStatusbarStyle.red,
     ProductDetailScreen: selectorStatusbarStyle.white
   },
+  statusbarContentStyle: {
+    ProductListScreen: 'light-content',
+    ProductDetailScreen: 'dark-content'
+  },
   currentScreenName: ''
 });
 
