@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import { View, useWindowDimensions, Text } from 'react-native';
+import { View, useWindowDimensions, Text, Dimensions } from 'react-native';
 import { TabView, TabBar, SceneMap, PagerScroll } from 'react-native-tab-view';
 import { TOMATO } from 'Themes/Colors';
 
 import styles from './ProductContentTabStyles';
+import TechnicalDetail from './TechnicalDetail';
 
-const FirstRoute = () => <View style={{ flex: 1, backgroundColor: 'blue' }} />;
+function FirstRoute() {
+  return <View style={styles.mockScene} />;
+}
 
-const SecondRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#673ab7' }} />
-);
-
-const ThirdRoute = () => (
-  <View style={{ flex: 1, backgroundColor: 'orange' }} />
-);
+function ThirdRoute() {
+  return <View style={styles.mockScene} />;
+}
 
 function TabLabel({ color, label }) {
   return <Text style={styles.tabLabel}>{label}</Text>;
@@ -31,7 +30,7 @@ function ProductContentTab() {
 
   const renderScene = SceneMap({
     first: FirstRoute,
-    second: SecondRoute,
+    second: TechnicalDetail,
     third: ThirdRoute
   });
 
@@ -73,7 +72,7 @@ function ProductContentTab() {
       navigationState={{ index, routes }}
       renderScene={renderScene}
       onIndexChange={setIndex}
-      initialLayout={{ width: layout.width }}
+      initialLayout={{ width: layout.width, height: 1000 }}
     />
   );
 }

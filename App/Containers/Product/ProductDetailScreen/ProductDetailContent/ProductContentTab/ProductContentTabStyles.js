@@ -22,5 +22,9 @@ export default StyleSheet.create({
   indicatorStyle: {
     height: 1,
     backgroundColor: TOMATO
+  },
+  mockScene: {
+    flex: 1,
+    backgroundColor: WHITE
   }
 });

@@ -3,7 +3,7 @@ import { PALE_GREY, WHITE } from 'Themes/Colors';
 
 export default StyleSheet.create({
   productDetailContentContainer: {
-    flex: 1,
+    flexGrow: 1,
     backgroundColor: WHITE
   },
   sectionSpace: {
