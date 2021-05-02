@@ -10,8 +10,9 @@ function ProductItem(props) {
   const { item } = props;
   const productItem = toDisplayObject(item);
   return (
-    <OpacityButton style={styles.productItemContainer}>
+    <OpacityButton isDelayPressIn={true} style={styles.productItemContainer}>
       <Image
+        fallback={true}
         defaultSource={images.noImage}
         resizeMode="cover"
         source={productItem.imageSource}

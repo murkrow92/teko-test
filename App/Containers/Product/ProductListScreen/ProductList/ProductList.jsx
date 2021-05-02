@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import { FlatList, View } from 'react-native';
 
 import products from 'App/Fixtures/products.json';
@@ -10,14 +10,19 @@ function SeparatorComponent(props) {
 }
 
 function ProductList(props) {
-  function renderItemHistorySearchBrand({ item }) {
+  function renderProductItem({ item }) {
     return <ProductItem item={item} />;
   }
+
+  const memoizedValue = useMemo(() => {
+    return renderProductItem;
+  }, []);
 
   const extract = (item, index) => index.toString();
 
   return (
     <FlatList
+      removeClippedSubviews={true}
       initialNumToRender={20}
       alwaysBounceHorizontal={false}
       alwaysBounceVertical={false}
@@ -27,7 +32,7 @@ function ProductList(props) {
       showsHorizontalScrollIndicator={false}
       keyboardShouldPersistTaps="always"
       data={products}
-      renderItem={renderItemHistorySearchBrand}
+      renderItem={memoizedValue}
       keyExtractor={extract}
       ItemSeparatorComponent={SeparatorComponent}
     />
