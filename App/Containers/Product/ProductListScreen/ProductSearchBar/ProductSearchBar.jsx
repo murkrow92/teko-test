@@ -7,16 +7,14 @@ import images from 'Themes/Images';
 import { COOL_GREY } from 'Themes/Colors';
 import styles from './ProductSearchBarStyles';
 import doNothing from 'Utils/doNothing';
-import OpacityButton from 'Components/Button/OpacityButton';
+import BackArrowButton from 'Components/Button/BackArrowButton';
 
 function ProductSearchBar(props) {
   const { onChangeText } = props;
 
   return (
     <View style={styles.productSearchBarContainer}>
-      <OpacityButton>
-        <Image source={images.iconArrowBack} style={styles.iconArrowBack} />
-      </OpacityButton>
+      <BackArrowButton />
       <View style={styles.searchInputContainer}>
         <Image source={images.iconSearch} style={styles.iconArrowSearch} />
         <TextInput
