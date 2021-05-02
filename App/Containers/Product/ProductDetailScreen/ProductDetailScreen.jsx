@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import ProductDetailHeader from './ProductDetailHeader/ProductDetailHeader';
 
 function ProductDetailScreen(props) {
   const { route } = props;
@@ -8,9 +8,9 @@ function ProductDetailScreen(props) {
   console.log('PRODUCT ITEM:', productItem);
 
   return (
-    <View>
-      <Text>Hello</Text>
-    </View>
+    <>
+      <ProductDetailHeader productItem={productItem} />
+    </>
   );
 }
 
