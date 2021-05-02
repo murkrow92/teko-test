@@ -17,7 +17,7 @@ export default StyleSheet.create({
     flex: 1,
     paddingLeft: 12,
     flexDirection: 'column',
-    backgroundColor: 'gold'
+    backgroundColor: 'transparent'
   },
   productItemTitle: {
     fontFamily: FONT_SF_PRO_TEXT_REGULAR,
@@ -62,6 +62,50 @@ export default StyleSheet.create({
     fontStyle: 'normal',
     lineHeight: 16,
     letterSpacing: -0.1,
-    color: COOL_GREY
+    color: COOL_GREY,
+    backgroundColor: 'transparent'
+  },
+  productItemDiscountText: {
+    fontFamily: FONT_SF_PRO_TEXT_REGULAR,
+    fontSize: 10,
+    fontWeight: '500',
+    fontStyle: 'normal',
+    letterSpacing: -0.24,
+    textAlign: 'center',
+    color: WHITE
+  },
+  discountTagContainer: {
+    marginLeft: 4,
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent'
+  },
+  triangle: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'transparent',
+    borderStyle: 'solid',
+    borderLeftWidth: 7,
+    borderRightWidth: 7,
+    borderBottomWidth: 7,
+    borderTopWidth: 7,
+    marginLeft: -7,
+    borderTopColor: 'transparent',
+    borderLeftColor: 'transparent',
+    borderRightColor: 'transparent',
+    borderBottomColor: TOMATO,
+    transform: [{ rotate: '-90deg' }]
+  },
+  discountTag: {
+    marginLeft: -1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: TOMATO,
+    paddingLeft: 4,
+    paddingRight: 4,
+    paddingTop: 2,
+    paddingBottom: 2,
+    borderRadius: 4
   }
 });

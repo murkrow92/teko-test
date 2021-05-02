@@ -6,6 +6,39 @@ import OpacityButton from 'Components/Button/OpacityButton';
 import styles from './ProductItemStyles';
 import images from 'Themes/Images';
 
+function DiscountBlock({ productItem }) {
+  const { discountPercent } = productItem;
+
+  return discountPercent > 0 ? (
+    <View style={styles.originalPriceContainer}>
+      <Text style={styles.productItemOriginalPrice}>
+        {productItem.originalPrice}
+      </Text>
+      <View style={styles.discountTagContainer}>
+        <View style={styles.triangle} />
+        <View style={styles.discountTag}>
+          <Text style={styles.productItemDiscountText}>
+            -{productItem.discountPercent}%
+          </Text>
+        </View>
+      </View>
+    </View>
+  ) : (
+    <View />
+  );
+}
+
+function PriceBlock({ productItem }) {
+  return (
+    <View style={styles.finalPriceContainer}>
+      <Text style={styles.productItemFinalPrice}>
+        {productItem.displayPrice}
+      </Text>
+      <Text style={styles.priceSymbol}> đ</Text>
+    </View>
+  );
+}
+
 function ProductItem(props) {
   const { item } = props;
   const productItem = toDisplayObject(item);
@@ -22,17 +55,8 @@ function ProductItem(props) {
         <Text numberOfLines={2} style={styles.productItemTitle}>
           {productItem.title}
         </Text>
-        <View style={styles.finalPriceContainer}>
-          <Text style={styles.productItemFinalPrice}>
-            {productItem.displayPrice}
-          </Text>
-          <Text style={styles.priceSymbol}> đ</Text>
-        </View>
-        <View style={styles.originalPriceContainer}>
-          <Text style={styles.productItemOriginalPrice}>
-            {productItem.originalPrice}
-          </Text>
-        </View>
+        <PriceBlock productItem={productItem} />
+        <DiscountBlock productItem={productItem} />
       </View>
     </OpacityButton>
   );

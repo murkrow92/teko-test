@@ -1,14 +1,9 @@
 import { formatUSDPriceToVND } from 'Utils/currencyFormatter';
 
-const discountArray = [0, 10, 20];
-
 export function toDisplayObject(product = {}, searchQuery = '') {
-  const discountPercent =
-    discountArray[Math.floor(Math.random() * discountArray.length)];
-
   const id = product.id ? product.id : 0;
   const originalPrice = id % 2 === 0 ? product.price : product.price * 1.2;
-
+  const discountPercent = id % 2 === 0 ? 0 : 20;
   return {
     ...product,
     title: product.name ? product.name : '',
