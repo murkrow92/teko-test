@@ -3,6 +3,7 @@ import { ScrollView, View } from 'react-native';
 import ProductTitle from './ProductTitle';
 
 import styles from './ProductDetailContentStyles';
+import SimilarProductList from './SimilarProductList/SimilarProductList';
 
 function ProductDetailContent(props) {
   const { productItem } = props;
@@ -16,6 +17,7 @@ function ProductDetailContent(props) {
       contentContainerStyle={styles.productDetailContentContainer}>
       <ProductTitle productItem={productItem} />
       <View style={styles.sectionSpace} />
+      <SimilarProductList />
     </ScrollView>
   );
 }
