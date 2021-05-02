@@ -18,7 +18,9 @@ function QuantityBlock(props) {
       <OpacityButton onPress={onMinusPress} style={styles.minusButtonContainer}>
         <Image style={styles.iconMinus} source={images.iconMinus} />
       </OpacityButton>
-      <Text style={styles.quantityText}>2</Text>
+      <View style={styles.quantityTextContainer}>
+        <Text style={styles.quantityText}>2</Text>
+      </View>
       <OpacityButton onPress={onPlusPress} style={styles.plusButtonContainer}>
         <Image style={styles.iconPlus} source={images.iconPlus} />
       </OpacityButton>

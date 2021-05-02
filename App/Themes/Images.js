@@ -6,6 +6,7 @@ import IconCart from 'Assets/Images/IconCart/cartOutlined.png';
 import NoImage from 'Assets/Images/NoImage/small.png';
 import IconPlus from 'Assets/Images/IconPlus/addCircle.png';
 import IconMinus from 'Assets/Images/IconMinus/removeCircle.png';
+import IconAddToCard from 'Assets/Images/IconAddToCard/addToCart.png';
 
 const images = {
   iconArrowBack: IconArrowBack,
@@ -15,7 +16,8 @@ const images = {
   noImage: NoImage,
   iconCart: IconCart,
   iconPlus: IconPlus,
-  iconMinus: IconMinus
+  iconMinus: IconMinus,
+  iconAddToCard: IconAddToCard
 };
 
 export default images;

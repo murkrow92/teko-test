@@ -1,6 +1,5 @@
 import { StyleSheet } from 'react-native';
-import { FONT_SF_PRO_TEXT_REGULAR } from 'Themes/Fonts';
-import { DARK_GREY, TOMATO } from 'Themes/Colors';
+import { hasNotch } from 'Config/Dimens';
 
 export default StyleSheet.create({
   productDetailFooterContainer: {
@@ -9,6 +8,11 @@ export default StyleSheet.create({
     flexDirection: 'row',
     padding: 8,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    paddingBottom: hasNotch ? 28 : 8
+  },
+  iconAddToCard: {
+    width: 24,
+    height: 24
   }
 });
