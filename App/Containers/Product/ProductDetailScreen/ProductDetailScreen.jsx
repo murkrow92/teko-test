@@ -1,8 +1,12 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 
 function ProductDetailScreen() {
-  return <View />;
+  return (
+    <View>
+      <Text>Hello</Text>
+    </View>
+  );
 }
 
 export default ProductDetailScreen;

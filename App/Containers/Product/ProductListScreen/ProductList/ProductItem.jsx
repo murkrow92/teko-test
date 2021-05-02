@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { toDisplayObject } from 'Transforms/Product';
 import Image from 'Components/FastImage/Image';
 import OpacityButton from 'Components/Button/OpacityButton';
-import styles from './ProductItemStyles';
 import images from 'Themes/Images';
+import styles from './ProductItemStyles';
 
 function DiscountBlock({ productItem }) {
   const { discountPercent } = productItem;
@@ -42,8 +43,18 @@ function PriceBlock({ productItem }) {
 function ProductItem(props) {
   const { item } = props;
   const productItem = toDisplayObject(item);
+
+  const navigation = useNavigation();
+
+  function gotoProductDetail() {
+    navigation.navigate('ProductDetailScreen');
+  }
+
   return (
-    <OpacityButton isDelayPressIn={true} style={styles.productItemContainer}>
+    <OpacityButton
+      onPress={gotoProductDetail}
+      isDelayPressIn={true}
+      style={styles.productItemContainer}>
       <Image
         fallback={true}
         defaultSource={images.noImage}
