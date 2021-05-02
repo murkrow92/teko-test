@@ -1,4 +1,5 @@
 import React from 'react';
+import { View } from 'react-native';
 import ProductDetailHeader from './ProductDetailHeader/ProductDetailHeader';
 
 function ProductDetailScreen(props) {
@@ -10,6 +11,7 @@ function ProductDetailScreen(props) {
   return (
     <>
       <ProductDetailHeader productItem={productItem} />
+      <View style={{ flex: 1 }} />
     </>
   );
 }
