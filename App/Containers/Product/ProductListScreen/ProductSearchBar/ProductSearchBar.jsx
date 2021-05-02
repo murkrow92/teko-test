@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
 
 import Image from 'Components/FastImage/Image';
+import BackArrowButton from 'Components/Button/BackArrowButton';
 import images from 'Themes/Images';
 import { COOL_GREY } from 'Themes/Colors';
 import styles from './ProductSearchBarStyles';
 import doNothing from 'Utils/doNothing';
-import BackArrowButton from 'Components/Button/BackArrowButton';
+import ClearButton from './ClearButton';
 
 function ProductSearchBar(props) {
   const { onChangeText } = props;
@@ -29,7 +30,7 @@ function ProductSearchBar(props) {
           style={styles.searchInput}
           onChangeText={onChangeText}
         />
-        <Image source={images.iconClose} style={styles.iconArrowSearch} />
+        <ClearButton />
       </View>
     </View>
   );
