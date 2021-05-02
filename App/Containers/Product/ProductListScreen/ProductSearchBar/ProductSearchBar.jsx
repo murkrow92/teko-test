@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { View, TextInput } from 'react-native';
+import { useSelector } from 'react-redux';
 
 import WithSearchProduct from 'Business/Product/WithSearchProduct';
 import Image from 'Components/FastImage/Image';
@@ -13,8 +14,7 @@ import ClearButton from './ClearButton';
 
 function ProductSearchBar(props) {
   const { onChangeText } = props;
-
-  console.log('ON CHANGE TEXT:', onChangeText);
+  const query = useSelector(state => state.product.query);
 
   return (
     <View style={styles.productSearchBarContainer}>
@@ -32,6 +32,7 @@ function ProductSearchBar(props) {
           keyboardType="default"
           style={styles.searchInput}
           onChangeText={onChangeText}
+          value={query}
         />
         <ClearButton />
       </View>
