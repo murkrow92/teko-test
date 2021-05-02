@@ -4,6 +4,7 @@ export function toDisplayObject(product = {}, searchQuery = '') {
   return {
     ...product,
     title: product.name ? product.name : '',
-    displayPrice: product.price ? formatUSDPriceToVND(product.price) : ''
+    displayPrice: product.price ? formatUSDPriceToVND(product.price) : '',
+    imageSource: product.imageUrl ? { uri: product.imageUrl } : { uri: '' }
   };
 }
