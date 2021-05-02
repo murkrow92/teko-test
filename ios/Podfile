@@ -9,7 +9,7 @@ target 'TekoTest' do
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
-    :hermes_enabled => false
+    :hermes_enabled => true
   )
 
   target 'TekoTestTests' do
@@ -25,5 +25,10 @@ target 'TekoTest' do
 
   post_install do |installer|
     react_native_post_install(installer)
+    installer.pods_project.targets.each do |t|
+       t.build_configurations.each do |config|
+         config.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '10.3'
+       end
+    end
   end
 end
