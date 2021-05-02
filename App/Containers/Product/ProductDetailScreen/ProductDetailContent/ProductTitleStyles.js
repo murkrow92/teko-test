@@ -35,6 +35,7 @@ export default StyleSheet.create({
     color: COOL_GREY
   },
   badgeWrapper: {
+    alignItems: 'center',
     marginTop: 8,
     flexDirection: 'row'
   },
@@ -57,5 +58,8 @@ export default StyleSheet.create({
     lineHeight: 16,
     letterSpacing: -0.1,
     color: COOL_GREY
+  },
+  space: {
+    marginLeft: 4
   }
 });

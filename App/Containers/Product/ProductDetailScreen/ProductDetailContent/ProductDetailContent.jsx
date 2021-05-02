@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView } from 'react-native';
+import { ScrollView, View } from 'react-native';
 import ProductTitle from './ProductTitle';
 
 import styles from './ProductDetailContentStyles';
@@ -15,6 +15,7 @@ function ProductDetailContent(props) {
       showsHorizontalScrollIndicator={false}
       contentContainerStyle={styles.productDetailContentContainer}>
       <ProductTitle productItem={productItem} />
+      <View style={styles.sectionSpace} />
     </ScrollView>
   );
 }

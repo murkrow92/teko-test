@@ -1,5 +1,8 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import CurrentPrice from 'Components/Product/CurrentPrice';
+import OriginalPrice from 'Components/Product/OrginalPrice';
+import DiscountTag from 'Components/Product/DiscountTag';
 import styles from './ProductTitleStyles';
 
 function ProductTitle(props) {
@@ -7,7 +10,7 @@ function ProductTitle(props) {
   return (
     <View style={styles.productTitleContainer}>
       <Text numberOfLines={1} style={styles.productTitleText}>
-        Bộ vi xử lý/ CPU Core I7-7800X (3.50 GHz)
+        {productItem.title}
       </Text>
       <Text numberOfLines={1} style={styles.productIdLabel}>
         Mã SP: <Text style={styles.productId}>9187691276</Text>
@@ -18,9 +21,13 @@ function ProductTitle(props) {
         </View>
       </View>
       <View style={styles.badgeWrapper}>
-        <Text style={styles.productFinalPrice}>
-          {productItem.originalPrice}
-        </Text>
+        <CurrentPrice productItem={productItem} />
+        <View style={styles.space}>
+          <OriginalPrice productItem={productItem} />
+        </View>
+        <View style={styles.space}>
+          <DiscountTag productItem={productItem} />
+        </View>
       </View>
     </View>
   );
