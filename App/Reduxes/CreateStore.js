@@ -11,7 +11,6 @@ function createStoreAndMiddleware(rootReducer, rootSaga) {
   middleware.push(sagaMiddleware);
   enhancers.push(applyMiddleware(...middleware));
   const store = createStore(rootReducer, compose(...enhancers));
-
   if (ReduxPersist.active) {
     Rehydration.updateReducers(store);
   }
