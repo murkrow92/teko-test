@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
+import ProductSearchBar from './ProductSearchBar';
 
 function ProductListScreen() {
-  return <View />;
+  return <ProductSearchBar> </ProductSearchBar>;
 }
 
 export default ProductListScreen;
