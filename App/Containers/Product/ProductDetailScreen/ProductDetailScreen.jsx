@@ -1,6 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import ProductDetailHeader from './ProductDetailHeader/ProductDetailHeader';
+import ProductDetailFooter from './ProductDetailFooter/ProductDetailFooter';
 
 function ProductDetailScreen(props) {
   const { route } = props;
@@ -12,6 +13,7 @@ function ProductDetailScreen(props) {
     <>
       <ProductDetailHeader productItem={productItem} />
       <View style={{ flex: 1 }} />
+      <ProductDetailFooter productItem={productItem} />
     </>
   );
 }
