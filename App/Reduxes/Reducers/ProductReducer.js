@@ -2,6 +2,7 @@ import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { ProductTypes } from 'Reduxes/Actions/ProductActions';
 import products from 'Fixtures/products.json';
+import score from 'string-score';
 
 export const INITIAL_STATE = Immutable({
   isLoading: false,
@@ -32,9 +33,18 @@ export const fetchProductListFailure = (state, action) => {
 
 export const filterProductList = (state, action) => {
   const { query } = action;
+  const filterResult =
+    query.length > 0
+      ? state.productList.filter(function (product) {
+          return score(product.name, query) > 0.4;
+        })
+      : state.productList;
+
+  console.log('RESULT:', filterResult.length);
+
   return state.merge({
     query: query,
-    filterProductList: products
+    filterProductList: filterResult
   });
 };
 

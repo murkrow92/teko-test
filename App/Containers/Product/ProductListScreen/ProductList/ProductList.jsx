@@ -20,7 +20,7 @@ function ProductList(props) {
 
   const extract = (item, index) => index.toString();
 
-  const products = useSelector(state => state.product.productList);
+  const products = useSelector(state => state.product.filterProductList);
   const isLoading = useSelector(state => state.product.isLoading);
   const refreshing = products.length === 0 && isLoading;
   return (
