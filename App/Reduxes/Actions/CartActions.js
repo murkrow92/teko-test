@@ -1,7 +1,7 @@
 import { createActions } from 'reduxsauce';
 
 const { Types, Creators } = createActions({
-  changeQuantity: ['productId', 'amount']
+  changeQuantity: ['product', 'amount']
 });
 
 export const CartTypes = Types;
