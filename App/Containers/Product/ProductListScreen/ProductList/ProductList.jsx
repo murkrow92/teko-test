@@ -18,6 +18,7 @@ function ProductList(props) {
 
   return (
     <FlatList
+      initialNumToRender={20}
       alwaysBounceHorizontal={false}
       alwaysBounceVertical={false}
       bounces={false}

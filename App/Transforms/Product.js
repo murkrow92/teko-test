@@ -5,9 +5,9 @@ const discountArray = [0, 10, 20];
 export function toDisplayObject(product = {}, searchQuery = '') {
   const discountPercent =
     discountArray[Math.floor(Math.random() * discountArray.length)];
-  const originalPrice = product.price
-    ? product.price + (product.price * discountPercent) / 100
-    : 0;
+
+  const id = product.id ? product.id : 0;
+  const originalPrice = id % 2 === 0 ? product.price : product.price * 1.2;
 
   return {
     ...product,

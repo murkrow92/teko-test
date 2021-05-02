@@ -9,15 +9,10 @@ import images from 'Themes/Images';
 function ProductItem(props) {
   const { item } = props;
   const productItem = toDisplayObject(item);
-
-  function onErrorImage(event) {
-    productItem.imageSource = images.noImage;
-  }
-
   return (
     <OpacityButton style={styles.productItemContainer}>
       <Image
-        onError={onErrorImage}
+        defaultSource={images.noImage}
         resizeMode="cover"
         source={productItem.imageSource}
         style={styles.productImage}

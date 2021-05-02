@@ -1,7 +1,7 @@
 import IconArrowBack from 'Assets/Images/IconArrowBack/arrowBack.png';
 import IconSearch from 'Assets/Images/IconSearch/search.png';
 import IconClose from 'Assets/Images/IconClose/iconClose.png';
-import NoImage from 'Assets/Images/NoImage/noImage.png';
+import NoImage from 'Assets/Images/NoImage/noimage.png';
 
 const images = {
   iconArrowBack: IconArrowBack,
