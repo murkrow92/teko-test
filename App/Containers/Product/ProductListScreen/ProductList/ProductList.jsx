@@ -11,7 +11,6 @@ function SeparatorComponent(props) {
 
 function ProductList(props) {
   function renderItemHistorySearchBrand({ item }) {
-    console.log('ITEM:', item);
     return <ProductItem item={item} />;
   }
 

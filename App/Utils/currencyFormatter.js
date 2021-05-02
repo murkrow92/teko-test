@@ -1,10 +1,10 @@
 import currencyFormatter from 'currency-formatter';
 
-const EXCHANGE_RATE = 23.5;
+const EXCHANGE_RATE = 23500;
 
 export function formatUSDPriceToVND(usdPrice) {
   const vndPrice = usdPrice * EXCHANGE_RATE;
-  return formatCurrencyWithVNDSymbol(vndPrice);
+  return formatCurrencyWithDot(vndPrice);
 }
 
 export function formatCurrencyWithDot(number) {
@@ -24,7 +24,7 @@ export function formatCurrencyWithVNDSymbol(number) {
     thousand: '.',
     precision: 0,
     // format: "%v %s" // %s is the symbol and %v is the value
-    format: '%v%s' // %s is the symbol and %v is the value
+    format: '%v %s' // %s is the symbol and %v is the value
   });
 }
 

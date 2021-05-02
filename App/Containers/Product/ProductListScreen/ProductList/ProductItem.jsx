@@ -20,6 +20,12 @@ function ProductItem(props) {
         <Text numberOfLines={2} style={styles.productItemTitle}>
           {productItem.title}
         </Text>
+        <View style={styles.finalPriceContainer}>
+          <Text style={styles.productItemFinalPrice}>
+            {productItem.displayPrice}
+          </Text>
+          <Text style={styles.priceSymbol}> đ</Text>
+        </View>
       </View>
     </OpacityButton>
   );
