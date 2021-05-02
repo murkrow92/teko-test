@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import PropTypes from 'prop-types';
 import Image from 'Components/FastImage/Image';
@@ -11,10 +11,10 @@ function BackArrowButton(props) {
   const navigation = useNavigation();
   const { isBlack } = props;
 
-  function goBack() {
-    const action = navigation.canGoBack() ? goBack : doNothing;
+  const goBack = useCallback(() => {
+    const action = navigation.canGoBack() ? navigation.goBack : doNothing;
     action();
-  }
+  }, [navigation]);
 
   const source = isBlack ? images.iconArrowBackBlack : images.iconArrowBack;
 

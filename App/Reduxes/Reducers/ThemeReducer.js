@@ -1,13 +1,14 @@
 import { createReducer } from 'reduxsauce';
 import Immutable from 'seamless-immutable';
 import { ThemeTypes } from 'Reduxes/Actions/ThemeActions';
+import { TOMATO, WHITE } from 'Themes/Colors';
 
 const selectorStatusbarStyle = {
   red: {
-    backgroundColor: 'red'
+    backgroundColor: TOMATO
   },
   white: {
-    backgroundColor: 'white'
+    backgroundColor: WHITE
   }
 };
 
