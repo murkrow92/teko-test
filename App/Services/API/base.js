@@ -10,21 +10,6 @@ const instance = axios.create({
   headers: {}
 });
 
-const handleSuccess = response => {
-  return {
-    data: response.data,
-    status: true
-  };
-};
-
-const handleError = error => {
-  return {
-    status: false,
-    statusCode: error?.response?.status,
-    error: error?.response?.data
-  };
-};
-
 export const GET = (url, params = {}, config = {}) => {
   const queryString = params ? qs.stringify(params) : '';
   const urlWithQuery = lodash.size(params) > 0 ? `${url}?${queryString}` : url;
@@ -50,6 +35,21 @@ export const PUT = (url, params, config = {}) => {
 
 export const DELETE = (url, config = {}) => {
   return instance.delete(url, config).then(handleSuccess).catch(handleError);
+};
+
+const handleSuccess = response => {
+  return {
+    data: response?.data,
+    status: true
+  };
+};
+
+const handleError = error => {
+  return {
+    status: false,
+    statusCode: error?.response?.status,
+    error: error?.response?.data
+  };
 };
 
 export const setAccessToken = accessToken => {
