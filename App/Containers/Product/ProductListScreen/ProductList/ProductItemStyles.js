@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 import { WIDTH_RATIO } from 'Config/Dimens';
 import { FONT_SF_PRO_TEXT_REGULAR } from 'Themes/Fonts';
-import { COOL_GREY, DARK_GREY, TOMATO, WHITE } from 'Themes/Colors';
+import { DARK_GREY, WHITE } from 'Themes/Colors';
 
 export default StyleSheet.create({
   productItemContainer: {
@@ -34,5 +34,8 @@ export default StyleSheet.create({
   originalPriceContainer: {
     marginTop: 2,
     flexDirection: 'row'
+  },
+  highlight: {
+    backgroundColor: 'yellow'
   }
 });

@@ -1,6 +1,9 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import Highlighter from 'react-native-highlight-words';
+import { useSelector } from 'react-redux';
+
 import { toDisplayObject } from 'Transforms/Product';
 import Image from 'Components/FastImage/Image';
 import OpacityButton from 'Components/Button/OpacityButton';
@@ -34,6 +37,9 @@ function ProductItem(props) {
     });
   }
 
+  const query = useSelector(state => state.product.query);
+  const queryPieces = query.split(' ');
+
   return (
     <OpacityButton
       onPress={gotoProductDetail}
@@ -48,7 +54,11 @@ function ProductItem(props) {
       />
       <View style={styles.productItemContentContainer}>
         <Text numberOfLines={2} style={styles.productItemTitle}>
-          {productItem.title}
+          <Highlighter
+            highlightStyle={styles.highlight}
+            searchWords={queryPieces}
+            textToHighlight={productItem.title}
+          />
         </Text>
         <View style={styles.finalPriceContainer}>
           <CurrentPrice productItem={productItem} />
