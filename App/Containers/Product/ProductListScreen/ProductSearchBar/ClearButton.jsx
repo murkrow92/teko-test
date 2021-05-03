@@ -11,7 +11,6 @@ import WithSearchProduct from 'Business/Product/WithSearchProduct';
 function ClearButton(props) {
   const { onSearch } = props;
   const query = useSelector(state => state.product.query);
-  console.log('QUERY:', query);
 
   function onPress() {
     onSearch('');

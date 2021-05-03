@@ -6,9 +6,6 @@ const updateReducers = (store: Object) => {
   const reducerVersion = ReduxPersist.reducerVersion;
   AsyncStorage.getItem('reducerVersion')
     .then(localVersion => {
-      console.log('LOCAL VERSION', localVersion);
-      console.log('STORE VERSION', reducerVersion);
-
       if (localVersion !== reducerVersion) {
         // persistStore(store, null).purge();
         persistStore(store, null);

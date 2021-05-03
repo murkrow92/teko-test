@@ -1,5 +1,6 @@
 import React, { useCallback, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import lodash from 'lodash';
 import ProductActions from 'Reduxes/Actions/ProductActions';
 
 function WithSearchProduct(OriginalComponent) {
@@ -10,8 +11,9 @@ function WithSearchProduct(OriginalComponent) {
       dispatch(ProductActions.filterProductList(query));
     }
 
+    const onSearchDelay = lodash.debounce(onSearch, 500);
+
     function onChangeText(text) {
-      console.log('ON CHANGE TEXT:', text);
       dispatch(ProductActions.filterProductList(text));
     }
 
@@ -19,7 +21,7 @@ function WithSearchProduct(OriginalComponent) {
       <OriginalComponent
         {...props}
         onChangeText={onChangeText}
-        onSearch={onSearch}
+        onSearch={onSearchDelay}
       />
     );
   }
